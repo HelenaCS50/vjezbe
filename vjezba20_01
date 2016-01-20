@@ -1,0 +1,76 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+// napisati program koji sa tipkovnice unosi brojeve dok ne unesemo broj nula.. i spremamo ih u listu intigera
+
+    // od unesenih brojeva ( manjih od 100) da li je iti jedan broj savršen broj (zbroj svih djelitelja (bez njega) daje taj broj)
+
+namespace vjezba05
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int broj = 0;
+            List<int> nizBrojeva = new List<int>();
+
+            while (true)
+            {
+                broj = int.Parse(Console.ReadLine());
+
+                if (broj == 0)
+                    break;
+                else
+                    nizBrojeva.Add(broj);
+            }
+
+            Sortiraj(nizBrojeva);
+
+            Console.WriteLine("uneseni brojevi su: ");
+            foreach (int br in nizBrojeva)
+
+            {
+                Console.Write("{0}", br);
+            }
+
+                Console.ReadKey();
+            }
+
+
+            static void Sortiraj(List<int> lista)
+                {
+                int min = 0;
+
+                for (int i = 0; i < lista.Count - 1; i++);
+
+                {
+                int i = 0;
+                min = lista[i];
+
+                    for (int j = i + 1; j < lista.Count; j++)
+                    {
+                        if (lista[j] < lista[i])
+
+                        {
+                            min = lista[j];
+
+                            lista[j] = lista[i];
+
+                            lista[i] = min;
+
+                        }
+
+                    } 
+                }
+        
+            }
+        
+
+        }
+
+    }
+ 
